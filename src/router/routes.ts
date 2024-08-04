@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
-import EpisodeView from '../components/Episode/Episode.vue'
-import TvShowView from '../components/TvShow/TvShow.vue'
+import EpisodeView from '../components/Episode/episode.vue'
+import TvShowView from '../components/TvShow/tvShow.vue'
 
 const routes = [
   { path: '/', component: TvShowView },
