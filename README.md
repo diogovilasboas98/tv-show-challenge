@@ -1,5 +1,27 @@
-# Vue 3 + TypeScript + Vite
+# Powerpuff girls job technical interview
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Tools:
+- Vue 3
+- TypeScript 
+- Vite
+- Vitest
+- PrimeVue component library
+- Axios
+- TvMaze API
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Node version
+v20.16.0
+
+## Environment Variables
+
+VITE_SHOW_ID - consists on the TvMaze show id of the show to be presented on the web app
+
+For example:
+
+.env file:
+```
+VITE_SHOW_ID: 1955
+```
+
+This will open the web app with the power puff girls tv show, but if you change the id to '1'. It will show the Under the dome tv show instead.
+
