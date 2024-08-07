@@ -1,5 +1,7 @@
 import axios from "axios"
 
+const showId = import.meta.env.VITE_SHOW_ID
+
 interface TvShowInfoInterface {
     id: number,
     url: string,
@@ -63,7 +65,7 @@ interface TvEpisodeInfoInterface {
 
 export async function fetchTvShowInfo(){
     try{
-        const { data }  = await axios.get('https://api.tvmaze.com/shows/1')
+        const { data }  = await axios.get(`https://api.tvmaze.com/shows/${showId}`)
         return data as TvShowInfoInterface;
     }catch(error){
         console.error(error)
@@ -73,7 +75,7 @@ export async function fetchTvShowInfo(){
 
 export async function fetchEpisodeList(){
     try{
-        const { data }  = await axios.get('https://api.tvmaze.com/shows/1/episodes')
+        const { data }  = await axios.get(`https://api.tvmaze.com/shows/${showId}/episodes`)
         return data as TvEpisodeInfoInterface[];
     }catch(error){
         console.error(error)

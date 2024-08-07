@@ -11,7 +11,9 @@ interface TvShowInterface {
 interface EpisodeInterface{
     title: string,
     summary: string,
-    episodeCoverImageUrl: string
+    episodeCoverImageUrl: string,
+    season: number,
+    number: number
 }
 
 const tvShowStore = defineStore('tvShow', {
@@ -22,6 +24,26 @@ const tvShowStore = defineStore('tvShow', {
             coverImageUrl: "",
             episodeList: []
         } as TvShowInterface
+    },
+
+    getters:{
+        TvShowSeasons(state){
+            //Get different seasons
+            return Array.from(new Set(state.episodeList.map(ep=>ep.season)))
+        },
+
+        getEpisodesBySeason(state){
+            //Filter by season
+            return (season:number)=> state.episodeList.filter(ep=>ep.season == season)
+        },
+
+        getEpisodeBySeasonEpNumber(state){
+            return (season:number, epNumber:number)=>{
+                return state.episodeList.find(ep=>{
+                    return ep.season == season && ep.number == epNumber
+                })
+            }
+        }
     },
 
     actions: {
@@ -40,7 +62,9 @@ const tvShowStore = defineStore('tvShow', {
             this.episodeList = episodeList.map((ep)=>({
                 title: ep.name,
                 summary: ep.summary,
-                episodeCoverImageUrl: ep.image.medium
+                episodeCoverImageUrl: ep.image?.medium ?? '/No_Image_Available.jpg',
+                season: ep.season,
+                number: ep.number
             }))
         }
     }

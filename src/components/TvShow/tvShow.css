@@ -1,0 +1,22 @@
+.description{
+    text-align: justify;
+    margin: auto;
+}
+
+body{
+    background-color: #eeedf3;
+}
+
+button{
+    border-radius: 0;
+}
+
+.tabs{
+    width: 80dvw;
+    max-width: 1216px;
+}
+
+.episode:hover .title{
+    text-decoration: underline;
+}
+
