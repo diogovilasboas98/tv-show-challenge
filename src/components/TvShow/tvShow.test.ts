@@ -143,16 +143,6 @@ describe('TV Show', () => {
         expect(seasonTabs.element.children.length).toBe(2)
     }),
     it('Has episodes', async()=>{
-        const wrapper = mount(TvShow,{
-            global:{
-                components:components,
-                plugins: [
-                    createTestingPinia(),
-                    router,
-                    PrimeVue
-                ],
-            }
-        })
         const store = usetvShowStore()
         store.episodeList= [{
             title: 'test',
