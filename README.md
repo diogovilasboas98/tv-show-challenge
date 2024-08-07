@@ -5,6 +5,7 @@
 - TypeScript 
 - Vite
 - Vitest
+- Vue testing utils
 - PrimeVue component library
 - Axios
 - TvMaze API
